@@ -1,0 +1,41 @@
+buildscript {
+  repositories { jcenter() }
+  dependencies {
+    classpath 'org.jfrog.buildinfo:build-info-extractor-gradle:4.3.0'
+  }
+}
+
+allprojects {
+	apply plugin: 'com.jfrog.artifactory'
+	repositories { jcenter() }
+}
+artifactoryPublish.skip = true
+
+subprojects { 
+	apply plugin: 'java'
+	apply plugin: 'maven-publish'
+
+	publishing {
+	  publications {
+		mavenJava(MavenPublication) {
+		  from components.java
+		}
+	  }
+	}
+}
+
+artifactory {
+  contextUrl = 'FAKE'
+  publish {
+    repository {
+      repoKey = 'FAKE'
+      username = 'FAKE'
+      password = 'FAKE'
+      maven = true
+    }
+    defaults { 
+      publications ('mavenJava')
+      publishArtifacts = true
+    }
+  }
+}
