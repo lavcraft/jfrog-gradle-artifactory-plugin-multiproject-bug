@@ -1,5 +1,4 @@
-apply plugin: 'nebula.provided-base'
 dependencies {
   compile project(":foo-common")
-  provided 'junit:junit:4.12'
+  testCompile 'junit:junit:4.12'
 }
