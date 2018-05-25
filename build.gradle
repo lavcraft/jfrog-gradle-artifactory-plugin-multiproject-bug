@@ -1,7 +1,8 @@
 buildscript {
   repositories { jcenter() }
   dependencies {
-    classpath 'org.jfrog.buildinfo:build-info-extractor-gradle:4.7.1'
+    classpath 'org.jfrog.buildinfo:build-info-extractor-gradle:4.7.2'
+    //fix in 4.7.3 version https://www.jfrog.com/jira/browse/GAP-288 classpath 'org.jfrog.buildinfo:build-info-extractor-gradle:4.7.3'
   }
 }
 

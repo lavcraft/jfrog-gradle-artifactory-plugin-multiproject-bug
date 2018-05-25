@@ -1,3 +1,9 @@
+# Update: already fixed
+
+According to [GAP-288](https://www.jfrog.com/jira/browse/GAP-288) this problem
+was fixed. Please upgradle build-info-extractor to 4.7.3+ version for avoid
+this problem
+
 # Reproduce
 
     ./gradlew build
